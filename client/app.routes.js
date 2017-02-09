@@ -17,7 +17,7 @@
                 state: 'index',
                 config: {
                     url: '/',
-                    templateUrl: './views/index.html',
+                    templateUrl: 'views/app.html',
                     controller: 'IndexController',
                     controllerAs: 'vm',
                     title: 'Index'
