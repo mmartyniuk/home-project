@@ -4,23 +4,17 @@ var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
 
 gulp.task('concat-app-js', function(){
-    return gulp.src(['./client/**/*.js', './client/app.module.js'])
+    return gulp.src(['./client/**/*.module.js', './client/**/*.js'])
         .pipe(concat('app-files.js'))
         .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('concat-bundle-js', function(){
-    return gulp.src(['./node_modules/angular/*.js', 
-        './node_modules/angular-ui-router/release/*.js', 
-        './node_modules/angular-aria/*.js', 
-        './node_modules/angular-animate/*.js', 
-        './node_modules/angular-material/*.js'
-        /*
-        './node_modules/angular-ui-router/release/*.min.js', 
-        './node_modules/angular-aria/*.min.js', 
-        './node_modules/angular-animate/*.min.js', 
-        './node_modules/angular-material/*.min.js'
-         */
+    return gulp.src(['./node_modules/angular/angular.min.js', 
+        './node_modules/angular-ui-router/release/angular-ui-router.min.js', 
+        './node_modules/angular-aria/angular-aria.min.js', 
+        './node_modules/angular-animate/angular-animate.min.js', 
+        './node_modules/angular-material/angular-material.min.js'
         ])
         .pipe(concat('app-bundle.js'))
         .pipe(gulp.dest('./dist'));

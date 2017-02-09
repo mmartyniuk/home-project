@@ -2,13 +2,23 @@
 <html>
     <head>
         <title>Family budget</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
         <base href="/" />
         <!-- inject:css -->
         <!-- endinject -->
     </head>
     <body>
         <div ng-app="app">
-            <div ng-view></div>
+            <md-toolbar>
+                <div class="md-toolbar-tools" >
+                    <a flex="5" ui-sref="about" class="md-flex">About</a>
+                    <a flex="5" ui-sref="index" class="md-flex">Index</a>
+                </div>
+            </md-toolbar>
+            <md-content class="md-padding">
+                
+                <ui-view></ui-view>
+            </md-content>
         </div>
         <!-- inject:js -->
         <!-- endinject -->
