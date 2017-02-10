@@ -4,7 +4,7 @@
   "description": "application for handling family budgets",
   "main": "index.js",
   "scripts": {
-    "start": "gulp build && node ."
+    "start": "gulp build && nodemon --debug ./index.js"
   },
   "author": "mmartyniuk",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-inject": "^4.2.0",
+    "nodemon": "^1.11.0",
     "run-sequence": "^1.2.2"
   }
 }
