@@ -8,6 +8,6 @@
 
     function IndexController() {
         var vm = this;
-        vm.title = 'App data';
+        vm.title = 'App da231312t21a1';
     }
 })();
