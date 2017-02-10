@@ -1,1 +1,41 @@
-<div>{{vm.title}}</div>
+<md-content class="md-padding" layout-xs="column" layout="row">
+    <div flex-xs flex-gt-xs="66">
+        <md-card layout="column" ng-repeat="cost in vm.costs">
+            <md-card-title layout="row">
+                <md-card-title-text layout="row">
+                    <span class="md-headline" flex-gt-xs="90">{{::cost.name}}</span>
+                    <span class="md-subhead" flex-gt-xs="10">{{::cost.date | date: 'dd/M/yyyy'}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content layout="row">
+                <div>
+                    <h4>
+                        <span ng-if="cost.type === 'income'">+</span>
+                        <span ng-if="cost.type === 'outcome'">-</span>
+                        {{::cost.amount + ' $'}}
+                    </h4>
+                    <h5>
+                        {{::cost.description}}
+                    </h4>
+                </div>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div flex-xs flex-gt-xs="33">
+        <md-toolbar layout-padding>
+            <div class="md-toolbar-tools">
+                <h3>Total Amount: {{::vm.totalAmount}}</h3>
+            </div>
+        </md-toolbar>
+        <div layout-margin>
+            <canvas id="line" 
+                class="chart-line" 
+                chart-data="vm.data"
+                chart-labels="vm.labels" 
+                chart-series="vm.series" 
+                chart-options="vm.options"
+                chart-dataset-override="datasetOverride">
+            </canvas>
+        </div>
+    </div>
+</md-content>

@@ -10,13 +10,13 @@
     <body>
         <div ng-app="app">
             <md-toolbar>
-                <div class="md-toolbar-tools" >
-                    <a flex="5" ui-sref="about" class="md-flex">About</a>
+                <div class="md-toolbar-tools" layout="row" layout-align="end center">
                     <a flex="5" ui-sref="index" class="md-flex">Index</a>
+                    <a flex="5" ui-sref="about" class="md-flex">About</a>
+                    <md-button class="md-raised md-primary">Login</md-button>
                 </div>
             </md-toolbar>
             <md-content class="md-padding">
-
                 <ui-view></ui-view>
             </md-content>
         </div>
